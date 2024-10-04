@@ -1,6 +1,7 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.15)
 PROJECT(pslib C)
 option(ENABLE_BMP   "Build with BMP support" ON)
-
+SET(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 
 if(ENABLE_BMP)

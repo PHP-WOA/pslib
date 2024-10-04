@@ -1,5 +1,5 @@
-/*
- *    (c) Copyright 2001  Vilson Gärtner, Uwe Steinmann.
+ï»¿/*
+ *    (c) Copyright 2001  Vilson Gé‹œtner, Uwe Steinmann.
  *    (c) Copyright 2002-2004  Uwe Steinmann.
  *    All rights reserved.
  *
@@ -2211,7 +2211,7 @@ PS_show2(PSDoc *psdoc, const char *text, int xlen) {
 		if(tmp && tmp[0])
 			ligdischar = tmp[0];
 		else
-			ligdischar = '¦';
+			ligdischar = 'Â¦';
 	}
 
 	/* Take kerning into account if adobe font metrics has been loaded. */
@@ -2579,7 +2579,7 @@ PS_show_boxed(PSDoc *psdoc, const char *text, float left, float bottom, float wi
 		/* Collect text until line is full, line has been ended or no more chars */
 		while(hlen < linewidth && *str != '\0' && lineend == ps_false && parend == ps_false) {
 			/* Search for next word boundry (delimiter) */
-			while(*str != ' ' && *str != '-' && *str != '\n' && *str != '\r' && *str != '­' && *str != '\0') {
+			while(*str != ' ' && *str != '-' && *str != '\n' && *str != '\r' && *str != 'Â­' && *str != '\0') {
 				prevchar = *str;
 				str++;
 				curpos++;
@@ -2728,7 +2728,7 @@ PS_show_boxed(PSDoc *psdoc, const char *text, float left, float bottom, float wi
 	//					printf("%c", hyphenword[i]);
 						if(buffer[i] & 1) {
 							strncpy(&buf1[k], &hyphenword[k-1], i+1);
-							buf1[i+k+1] = '­';
+							buf1[i+k+1] = 'Â­';
 							buf1[i+k+2] = '\0';
 //							printf("buf1 = %s\n", buf1);
 							hlen = PS_stringwidth2(psdoc, buf1, -1, fontid, psdoc->font->size);
@@ -2762,7 +2762,7 @@ PS_show_boxed(PSDoc *psdoc, const char *text, float left, float bottom, float wi
 				if(NULL != (linebuf = psdoc->malloc(psdoc, lastdelim-lastbreak+morechars+2, _("Could not allocate memory for line buffer.")))) {
 					strncpy(linebuf, &textcopy[lastbreak], lastdelim-lastbreak+morechars);
 					if(lasthp > 0)
-						linebuf[lastdelim-lastbreak+morechars] = '­';
+						linebuf[lastdelim-lastbreak+morechars] = 'Â­';
 					else
 						linebuf[lastdelim-lastbreak+morechars] = '\0';
 					linebuf[lastdelim-lastbreak+morechars+1] = '\0';
@@ -4266,7 +4266,7 @@ PS_string_geometry(PSDoc *psdoc, const char *text, int xlen, int fontid, float s
 		if(tmp && tmp[0])
 			ligdischar = tmp[0];
 		else
-			ligdischar = '¦';
+			ligdischar = 'Â¦';
 	}
 
 //	printf("determine width of %s\n", text);
